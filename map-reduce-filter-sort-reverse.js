@@ -151,7 +151,7 @@ array1 = [true, true, true, false,
     true, true, true, true,
     false, false, true, true];
 
-console.log(countSheeps(array1));
+// console.log(countSheeps(array1));
 
 const places = [
     {
@@ -212,19 +212,54 @@ function gooseFilter(birds) {
     return filtered;
 }
 
-console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
+// console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
 // ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
 
 
+// reverse - reverses the array in place 
+
+// let's take an array - that we want to reverse 
+const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'];
+
+const str = 'hello my world';
+
+// letters.reverse();
+// console.log(str.split('')); // [ 'h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd' ]
+
+// split() turns string to an array
+// console.log(str.split(' ')); // [ 'hello', 'my', 'world']
+
+// join() turns array to a string
+
+// console.log(letters);
 
 
 
+// sort() sorts the array 'in place' (using no auxiliary data structure) and returns a new array  
 
+// const numbers = [22, 23, 99, 68, 1, 0, 9, 112, 223, 64, 18];
 
+// console.log(numbers.sort()); // [ 0, 1, 112, 18, 22, 223, 23, 64, 68, 9, 99 ]
 
+// sort by default uses the character encoding - string unicode - to sort the array
+// the method converts the array elements into strings before comparing them 
 
+const numbers = [22, 23, 99, 68, 1, 0, 9, 112, 223, 64, 18];
 
+// but we can pass a compare function
+// function compare(a, b) {
+//     if (a < b) return 1; // moves element to the right of the array 
+//     if (a == b) return 0;
+//     if (a > b) return -1; // moves element to the left of the array
+// }
+// console.log(numbers.sort(compare)); // [ 0, 1, 9, 18, 22, 23, 64, 68, 99, 112, 223 ]
 
+const sorted = numbers.sort(function (a, b) {
+    return a - b; // sorted ascending
+    // return b - a; // sorted descending
+});
+
+console.log(sorted);
 
 
 
