@@ -49,6 +49,7 @@
 
 // const numbers = [2, 4, 6, 8];
 
+
 // const sum = numbers.reduce(function (sum, val) {
 //     console.log('acc is: ', sum);
 //     console.log('val is:', val);
@@ -56,13 +57,13 @@
 // });
 
 // we want to add up all the sums of the letters of all the names
-const names = ['brian', 'mike', 'alan', 'bruce'];
+// const names = ['brian', 'mike', 'alan', 'bruce'];
 
-const lengthOfStrings = names.reduce(function (acc, val) {
-    // console.log('acc is: ', acc);
-    // console.log('val is:', val.length);
-    return acc + val.length;
-}, 0);
+// const lengthOfStrings = names.reduce(function (acc, val) {
+//     // console.log('acc is: ', acc);
+//     // console.log('val is:', val.length);
+//     return acc + val.length;
+// }, 0);
 
 
 
@@ -78,9 +79,9 @@ const people = [
 ];
 
 // sum up all the ages in the array
-const ages = people.reduce(function (ages, person) {
-    return ages + person.age;
-}, 0);
+// const ages = people.reduce(function (ages, person) {
+//     return ages + person.age;
+// }, 0);
 
 const product = {
     name: "AmazonBasics Apple Certified Lightning to USB Cable",
@@ -117,8 +118,115 @@ const product = {
 }
 
 // sum up all the rates of this product using reduce
-const sumOfAllRates = product.reviews.reduce(function (sum, review) {
-    return sum + review.rate
-}, 0);
+// const sumOfAllRates = product.reviews.reduce(function (sum, review) {
+//     return sum + review.rate
+// }, 0);
 
-console.log(sumOfAllRates);
+// console.log(sumOfAllRates);
+
+
+// filter - iterates through the array and returns a new array with all the elements that matches the condition we set
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// const evenNumbers = numbers.filter(function (number) {
+//     return number % 2 === 0;
+// });
+
+// console.log(evenNumbers);
+
+
+// count the sheep from codewars - https://www.codewars.com/kata/57ee4a67108d3fd9eb0000e7
+function countSheeps(arrayOfSheep) {
+    const sheeps = arrayOfSheep.filter(function (sheep) {
+        return sheep === true;
+    });
+    return sheeps.length;
+}
+
+array1 = [true, true, true, false,
+    true, true, true, true,
+    true, false, true, false,
+    true, false, false, true,
+    true, true, true, true,
+    false, false, true, true];
+
+console.log(countSheeps(array1));
+
+const places = [
+    {
+        title: "Awesome Suite 20' away from la Rambla",
+        price: 200,
+        type: "Private Room",
+        pool: true,
+        garage: false
+    },
+    {
+        title: "Private apartment",
+        price: 190,
+        type: "Entire Place",
+        pool: true,
+        garage: true
+    },
+    {
+        title: "Apartment with awesome views",
+        price: 400,
+        type: "Entire Place",
+        pool: false,
+        garage: false
+    },
+    {
+        title: "Apartment in la Rambla",
+        price: 150,
+        type: "Private Room",
+        pool: false,
+        garage: true
+    },
+    {
+        title: "Comfortable place in Barcelona´s center",
+        price: 390,
+        type: "Entire place",
+        pool: true,
+        garage: true
+    }
+];
+
+// filter for all the places that have a pool - all the places with a pool should be filtered
+
+const placesWithPool = places.filter(function (place) {
+    return place.pool === true;
+});
+
+// console.log(placesWithPool);
+
+
+
+// Kata - filter out the geese - https://www.codewars.com/kata/57ee4a67108d3fd9eb0000e7
+
+function gooseFilter(birds) {
+    const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    const filtered = birds.filter(function (bird) {
+        // return !geese.includes(bird);
+        return geese.indexOf(bird) === - 1;
+    })
+    return filtered;
+}
+
+console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
+// ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
